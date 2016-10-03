@@ -129,8 +129,8 @@ Change the **HDD** value of the last row to 500 (GB).
 ### Task#6:
 Transfer the **COMPUTERS** table as **PC** table into the **TEST2** databese.
 
->Tip: Use fully-specified table names in **RENAME** clouse. In the same way 
-you can rename entire databases as well.
+>**Tip:** Use fully-specified table names in the **RENAME** clouse. By the 
+same way you can rename entire databases as well.
 
 Demonstrate the **TEST1** database is empty now.
 #### Resul:
@@ -144,7 +144,7 @@ Test#2. Simple queries.
 
 The most commonly used queries in SQL are **SELECT** queries. This type of 
 queries is used to retrieve varios information from databases. So, let's 
-make some simple **SELECT** queries from the **PC** table.
+make a few simple **SELECT** queries from the **PC** table.
 
 ### Task#1:
 Output **CPU** and **HDD** values of **PC**s which memory value is equal to 
@@ -171,8 +171,8 @@ Output minimal **HDD** value named as **MIN_HDD**.
 ```
 
 ### Task#3:
-Output **COUNT** and **HDD** values where **COUNT** is amount of **PC**s 
-which have the minimal **HDD** value.
+Output **COUNT** and **HDD** values where **COUNT** represents an amount 
+of **PC**s which have the minimal **HDD** value.
 #### Resul:
 ```
 +-------+------+
@@ -187,8 +187,8 @@ Test#3. The special cases.
 --------------------------
 
 In this chapter we'll consider some special queries to a SQL DBMS. Before 
-you start the tasks below you should know about the special table named 
-**DUAL**.
+you start the tasks below, you should become acquainted with a special table 
+named **DUAL**.
 
 ### Task#1:
 Calculate the value of the following expression: **3 + 2 * 4**.
@@ -202,9 +202,9 @@ Calculate the value of the following expression: **3 + 2 * 4**.
 ```
 
 ### Task#2:
-Make a new table **LOGON** by using **SELECT** query only. The table must 
-consist of two columns (**USER** and **SYSDATE**) and have only one row with 
-current user and date-time information.
+Make a new table **LOGON** by using the **SELECT** query to do it. The table 
+must consist of two columns (**USER** and **SYSDATE**) and have only one row 
+with current user and date-time information.
 #### Resul:
 ```
 +----------------+---------------------+
