@@ -65,7 +65,7 @@ In this section, we will create a database and a table, fill in the
 table with some information, and even transfer the table into a 
 different database.
 
-### Task#1:
+### Task#1.1:
 If the database named **TEST1** exists, delete it. Make the new **TEST1** 
 database.
 #### Result:
@@ -73,7 +73,7 @@ database.
 Query OK, 1 row affected (0.00 sec)
 ```
 
-### Task#2:
+### Task#1.2:
 Switch into the database and make the table named **COMPUTERS**, which must 
 consist of three integer (numeric) columns: **CPU**, **MEMORY**, **HDD**. 
 Then show the new table in the **TEST1** database.
@@ -86,7 +86,7 @@ Then show the new table in the **TEST1** database.
 +-----------------+
 ```
 
-### Task#3:
+### Task#1.3:
 Show the **COMPUTERS** table column's domains (data types).
 #### Result:
 ```
@@ -99,7 +99,7 @@ Show the **COMPUTERS** table column's domains (data types).
 +--------+--------+------+-----+---------+-------+
 ```
 
-### Task#4:
+### Task#1.4:
 Add four rows to the **COMPUTERS** table with the following 
 information:
 #### Result:
@@ -114,7 +114,7 @@ information:
 +------+--------+------+
 ```
 
-### Task#5:
+### Task#1.5:
 Change the **HDD** value of the last row to 500 (GB).
 #### Result:
 ```
@@ -128,7 +128,7 @@ Change the **HDD** value of the last row to 500 (GB).
 +------+--------+------+
 ```
 
-### Task#6:
+### Task#1.6:
 Transfer the **COMPUTERS** table as **PC** table into the **TEST2** databese.
 
 >**Tip:** Use fully-specified table names in the **RENAME** clouse. By the 
@@ -149,7 +149,7 @@ The most commonly used queries in SQL are **SELECT** queries. This type of
 queries is used to retrieve varios information from databases. So, let's 
 make a few simple **SELECT** queries from the **PC** table.
 
-### Task#1:
+### Task#2.1:
 Output **CPU** and **HDD** values of **PC**s which memory value is equal to 
 3000 (MB).
 #### Result:
@@ -162,7 +162,7 @@ Output **CPU** and **HDD** values of **PC**s which memory value is equal to
 +------+------+
 ```
 
-### Task#2:
+### Task#2.2:
 Output minimal **HDD** value named as **MIN_HDD**.
 #### Result:
 ```
@@ -173,7 +173,7 @@ Output minimal **HDD** value named as **MIN_HDD**.
 +---------+
 ```
 
-### Task#3:
+### Task#2.3:
 Output **COUNT** and **HDD** values where **COUNT** represents an amount 
 of **PC**s which have the minimal **HDD** value.
 #### Result:
@@ -194,7 +194,7 @@ In this chapter we'll consider some special queries to a SQL DBMS. Before
 you start the tasks below, you should become acquainted with a special table 
 named **DUAL**.
 
-### Task#1:
+### Task#3.1:
 Calculate the value of the following expression: **3 + 2 * 4**.
 #### Result:
 ```
@@ -205,7 +205,7 @@ Calculate the value of the following expression: **3 + 2 * 4**.
 +-----------+
 ```
 
-### Task#2:
+### Task#3.2:
 Make a new table **LOGON** by using the **SELECT** query to do it. The table 
 must consist of two columns (**USER** and **SYSDATE**) and have only one row 
 with current user and date-time information.
@@ -218,7 +218,7 @@ with current user and date-time information.
 +----------------+---------------------+
 ```
 
-### Task#3:
+### Task#3.3:
 Add to the **LOGON** table a column named **ID** to consist **not-null**, 
 **auto-incremented** and **primary-key** values.
 #### Result:
@@ -230,7 +230,7 @@ Add to the **LOGON** table a column named **ID** to consist **not-null**,
 +----------------+---------------------+----+
 ```
 
-### Task#4:
+### Task#3.4:
 Print the information about the table **LOGON** column data types.
 #### Result:
 ```
@@ -243,7 +243,7 @@ Print the information about the table **LOGON** column data types.
 +---------+-------------+------+-----+---------------------+----------------+
 ```
 
-### Task#5:
+### Task#3.5:
 Add to the **LOGON** table a new row with the current user and date-time 
 values.
 #### Result:
@@ -265,7 +265,7 @@ In the current **Test** you are provided with two tables: **USERS** and
 **ORDERS**. To complete the folloing **Tasks** you have to be able to 
 make more complicated queries.
 
-### Task#1:
+### Task#4.1:
 Output **USER_ID**, **SALE** and **DATE** from **ORDERS** table sorted 
 by **SALE** and **DATE** (from max to min values), where **SALE** is a 
 product of multiplication **PRICE** on **QUANTITY**.
@@ -285,7 +285,7 @@ product of multiplication **PRICE** on **QUANTITY**.
 +---------+------+------------+
 ```
 
-### Task#2:
+### Task#4.2:
 Create a view **SALES** based on the previous query.
 #### Result:
 ```
@@ -297,7 +297,7 @@ necessary to manage its data after the view has been created. The
 **DBMS** will change the view data automaticly when the based-on 
 data have changed.
 
-### Task#3:
+### Task#4.3:
 From the **USERS** table and **SALES** view, output **CUSTOMER** and 
 **TOTAL** sorted by **TOTAL** (from max to min values), where **TOTAL** 
 is a sum of all sales that belong to a certain customer. 
@@ -315,7 +315,7 @@ Print the **CUSTOMER** values in a natural manner, e.g. 'John Smith'.
 +--------------+-------+
 ```
 
-### Task#4:
+### Task#4.4:
 Delete the **SALES** view. Change the previous query to get the same 
 results without the removed view.
 
@@ -333,7 +333,7 @@ To complete the Test you have to be familiar with **ORDER BY .. HAVING**
 and **JOIN** clauses and be able to compose -- so to spaek -- 
 *cross-linking* **SELECT** queries.
 
-### Task#1:
+### Task#5.1:
 Output list of departments with total salaries of all its employees sorted 
 by total salaris.
 #### Result:
@@ -348,7 +348,7 @@ by total salaris.
 +-------------+-------------+
 ```
 
-### Task#2:
+### Task#5.2:
 Output list of department's IDs, which amount of employees is not more 
 then three.
 #### Result:
@@ -363,7 +363,7 @@ then three.
 ```
 >Tip: Use **HAVING** clause to make it easy.
 
-### Task#3:
+### Task#5.3:
 Output list of employees, which salary is more then its chief earns.
 #### Result:
 ```
@@ -375,7 +375,7 @@ Output list of employees, which salary is more then its chief earns.
 +-------------+
 ```
 
-### Task#4:
+### Task#5.4:
 Output list of employees, which salary is maximal for its department.
 #### Result:
 ```
@@ -390,7 +390,7 @@ Output list of employees, which salary is maximal for its department.
 +--------+-------------+--------+
 ```
 
-### Task#5:
+### Task#5.5:
 Output list of employees, which doesn't have a chief that works in the 
 same department.
 #### Result:
@@ -404,3 +404,4 @@ same department.
 +--------------+
 ```
 >Tip: Use **JOIN** clause to make it easy.
+
