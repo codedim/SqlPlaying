@@ -39,6 +39,7 @@ mysql>show databases;
 have finished the Quizzes.
 
 
+-----------------------------
 How to work with the Quizzes?
 -----------------------------
 
@@ -56,6 +57,7 @@ SELECT answer FROM answers WHERE id = <NumberOfQuestion>;
 **Good Luck!**
 
 
+--------------------------
 Test#1. Making a database.
 --------------------------
 
@@ -66,7 +68,7 @@ different database.
 ### Task#1:
 If the database named **TEST1** excists, delete it. Make the new **TEST1** 
 database.
-#### Resul:
+#### Result:
 ```
 Query OK, 1 row affected (0.00 sec)
 ```
@@ -75,7 +77,7 @@ Query OK, 1 row affected (0.00 sec)
 Switch into the database and make the table named **COMPUTERS** which must 
 consist of three integer (numeric) columns: **CPU**, **MEMORY**, **HDD**. 
 Then show the new table in the **TEST1** database.
-#### Resul:
+#### Result:
 ```
 +-----------------+
 | Tables_in_test1 |
@@ -86,7 +88,7 @@ Then show the new table in the **TEST1** database.
 
 ### Task#3:
 Show the **COMPUTERS** table column's domains (data types).
-#### Resul:
+#### Result:
 ```
 +--------+--------+------+-----+---------+-------+
 | Field  | Type   | Null | Key | Default | Extra |
@@ -100,7 +102,7 @@ Show the **COMPUTERS** table column's domains (data types).
 ### Task#4:
 Add four rows to the **COMPUTERS** table with the following 
 information:
-#### Resul:
+#### Result:
 ```
 +------+--------+------+
 | cpu  | memory | hdd  |
@@ -114,7 +116,7 @@ information:
 
 ### Task#5:
 Change the **HDD** value of the last row to 500 (GB).
-#### Resul:
+#### Result:
 ```
 +------+--------+------+
 | cpu  | memory | hdd  |
@@ -133,12 +135,13 @@ Transfer the **COMPUTERS** table as **PC** table into the **TEST2** databese.
 same way you can rename entire databases as well.
 
 Demonstrate the **TEST1** database is empty now.
-#### Resul:
+#### Result:
 ```
 Empty set (0.00 sec)
 ```
 
 
+-----------------------
 Test#2. Simple queries.
 -----------------------
 
@@ -149,7 +152,7 @@ make a few simple **SELECT** queries from the **PC** table.
 ### Task#1:
 Output **CPU** and **HDD** values of **PC**s which memory value is equal to 
 3000 (MB).
-#### Resul:
+#### Result:
 ```
 +------+------+
 | cpu  | hdd  |
@@ -161,7 +164,7 @@ Output **CPU** and **HDD** values of **PC**s which memory value is equal to
 
 ### Task#2:
 Output minimal **HDD** value named as **MIN_HDD**.
-#### Resul:
+#### Result:
 ```
 +---------+
 | min_hdd |
@@ -173,7 +176,7 @@ Output minimal **HDD** value named as **MIN_HDD**.
 ### Task#3:
 Output **COUNT** and **HDD** values where **COUNT** represents an amount 
 of **PC**s which have the minimal **HDD** value.
-#### Resul:
+#### Result:
 ```
 +-------+------+
 | count | hdd  |
@@ -183,6 +186,7 @@ of **PC**s which have the minimal **HDD** value.
 ```
 
 
+--------------------------
 Test#3. The special cases.
 --------------------------
 
@@ -192,7 +196,7 @@ named **DUAL**.
 
 ### Task#1:
 Calculate the value of the following expression: **3 + 2 * 4**.
-#### Resul:
+#### Result:
 ```
 +-----------+
 | 3 + 2 * 4 |
@@ -205,7 +209,7 @@ Calculate the value of the following expression: **3 + 2 * 4**.
 Make a new table **LOGON** by using the **SELECT** query to do it. The table 
 must consist of two columns (**USER** and **SYSDATE**) and have only one row 
 with current user and date-time information.
-#### Resul:
+#### Result:
 ```
 +----------------+---------------------+
 | user           | sysdate             |
@@ -217,7 +221,7 @@ with current user and date-time information.
 ### Task#3:
 Add to the **LOGON** table a column named **ID** to consist **not-null**, 
 **auto-incremented** and **primary-key** values.
-#### Resul:
+#### Result:
 ```
 +----------------+---------------------+----+
 | user           | sysdate             | id |
@@ -228,7 +232,7 @@ Add to the **LOGON** table a column named **ID** to consist **not-null**,
 
 ### Task#4:
 Print the information about the table **LOGON** column data types.
-#### Resul:
+#### Result:
 ```
 +---------+-------------+------+-----+---------------------+----------------+
 | Field   | Type        | Null | Key | Default             | Extra          |
@@ -242,7 +246,7 @@ Print the information about the table **LOGON** column data types.
 ### Task#5:
 Add to the **LOGON** table a new row with the current user and date-time 
 values.
-#### Resul:
+#### Result:
 ```
 +----------------+---------------------+----+
 | user           | sysdate             | id |
@@ -253,14 +257,104 @@ values.
 ```
 
 
+---------------------------------
+Test#4. More complicated SELECTs.
+---------------------------------
+
+In the current **Test** you are provided with two tables: **USERS** and 
+**ORDERS**. To complete the folloing **Tasks** you have to be able to 
+make more complicated queries.
+
+### Task#1:
+Output **USER_ID**, **SALE** and **DATE** from **ORDERS** table sorted 
+by **SALE** and **DATE** (from max to min values), where **SALE** is a 
+product of multiplication **PRICE** on **QUANTITY**.
+#### Result:
+```
++---------+------+------------+
+| user_id | sale | date       |
++---------+------+------------+
+|       3 | 4000 | 2005-12-22 |
+|       4 | 4000 | 2005-03-11 |
+|       1 | 3280 | 2005-02-10 |
+|       2 | 3000 | 2006-01-28 |
+|       4 | 2500 | 2005-07-13 |
+|       1 |  840 | 2005-07-15 |
+|       2 |  380 | 2005-10-08 |
+|       1 |  320 | 2005-08-22 |
++---------+------+------------+
+```
+
+### Task#2:
+Create a view **SALES** based on the previous query.
+#### Result:
+```
+Query OK, 0 rows affected (0.08 sec)
+```
+
+>**Views** represent in a database as separate tables, but it isn't 
+necessary to manage its data after the view has been created. The 
+**DBMS** will change the view data automaticly when the based-on 
+data have changed.
+
+### Task#3:
+From the **USERS** table and **SALES** view, output **CUSTOMER** and 
+**TOTAL** sorted by **TOTAL** (from max to min values), where **TOTAL** 
+is a sum of all sales that belong to a certain customer. 
+
+Print the **CUSTOMER** values in a natural manner, e.g. 'John Smith'.
+#### Result:
+```
++--------------+-------+
+| customer     | total |
++--------------+-------+
+| Ken Baldwin  |  6500 |
+| John Smith   |  4440 |
+| Alain Wood   |  4000 |
+| Eric Johnson |  3380 |
++--------------+-------+
+```
+
+### Task#4:
+Delete the **SALES** view. Change the previous query to get the same 
+results without the removed view.
 
 
+-----------------------------
+Test#5. Pro-level SELECTs ;-)
+-----------------------------
 
+### Task#1:
 
+#### Result:
+```
 
-### Task#:
+```
 
-#### Resul:
+### Task#2:
+
+#### Result:
+```
+
+```
+
+### Task#3:
+
+#### Result:
+```
+
+```
+
+### Task#4:
+
+#### Result:
+```
+
+```
+
+### Task#5:
+
+#### Result:
 ```
 
 ```
