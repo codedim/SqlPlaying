@@ -46,7 +46,7 @@ How to work with the Quizzes?
 The every offered Quiz is contained in a separate Database. Those 
 databases are named as **test1**, **test2** and so on.
 
-In every such database you can find a table named **answers**, that 
+In every such database, you can find a table named **answers**, that 
 consists possible answers (SQL queries) together with its corresponding 
 IDs. If you wish to compare your answer with my one, just type:
 
@@ -61,12 +61,12 @@ SELECT answer FROM answers WHERE id = <NumberOfQuestion>;
 Test#1. Making a database.
 --------------------------
 
-In this section we will create a database and a table, fill in the 
+In this section, we will create a database and a table, fill in the 
 table with some information, and even transfer the table into a 
 different database.
 
 ### Task#1:
-If the database named **TEST1** excists, delete it. Make the new **TEST1** 
+If the database named **TEST1** exists, delete it. Make the new **TEST1** 
 database.
 #### Result:
 ```
@@ -74,7 +74,7 @@ Query OK, 1 row affected (0.00 sec)
 ```
 
 ### Task#2:
-Switch into the database and make the table named **COMPUTERS** which must 
+Switch into the database and make the table named **COMPUTERS**, which must 
 consist of three integer (numeric) columns: **CPU**, **MEMORY**, **HDD**. 
 Then show the new table in the **TEST1** database.
 #### Result:
@@ -349,7 +349,7 @@ by total salaris.
 ```
 
 ### Task#2:
-Output list of department's IDs which amount of employees is not more 
+Output list of department's IDs, which amount of employees is not more 
 then three.
 #### Result:
 ```
@@ -364,7 +364,7 @@ then three.
 >Tip: Use **HAVING** clause to make it easy.
 
 ### Task#3:
-Output list of employees which salary is more then its chief earns.
+Output list of employees, which salary is more then its chief earns.
 #### Result:
 ```
 +-------------+
@@ -376,7 +376,7 @@ Output list of employees which salary is more then its chief earns.
 ```
 
 ### Task#4:
-Output list of employees which salary is maximal for its department.
+Output list of employees, which salary is maximal for its department.
 #### Result:
 ```
 +--------+-------------+--------+
@@ -391,7 +391,7 @@ Output list of employees which salary is maximal for its department.
 ```
 
 ### Task#5:
-Output list of employees which doesn't have a chief that works in the 
+Output list of employees, which doesn't have a chief that works in the 
 same department.
 #### Result:
 ```
