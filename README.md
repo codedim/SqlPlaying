@@ -324,38 +324,83 @@ results without the removed view.
 Test#5. Pro-level SELECTs ;-)
 -----------------------------
 
-### Task#1:
+In this Quiz you also have two tables: the 'Departmens' table as **DEP** 
+and the 'Emplowee' table as **EMP**. Note that the **EMP** table has 
+**DEP_ID** links to not only the **DEP** table, but **CHIEF_ID** links 
+to itself as well.
 
+To complete the Test you have to be familiar with **ORDER BY .. HAVING** 
+and **JOIN** clauses and be able to compose -- so to spaek -- 
+*cross-linking* **SELECT** queries.
+
+### Task#1:
+Output list of departments with total salaries of all its employees sorted 
+by total salaris.
 #### Result:
 ```
-
++-------------+-------------+
+| name        | SUM(salary) |
++-------------+-------------+
+| IT          |      300000 |
+| Direction   |      285000 |
+| Secretariat |       20000 |
+| Maintenance |       10000 |
++-------------+-------------+
 ```
 
 ### Task#2:
-
+Output list of department's IDs which amount of employees is not more 
+then three.
 #### Result:
 ```
-
++--------+
+| dep_id |
++--------+
+|      1 |
+|      2 |
+|      4 |
++--------+
 ```
+>Tip: Use **HAVING** clause to make it easy.
 
 ### Task#3:
-
+Output list of employees which salary is more then its chief earns.
 #### Result:
 ```
-
++-------------+
+| name        |
++-------------+
+| Garry Poter |
+| Bob Martin  |
++-------------+
 ```
 
 ### Task#4:
-
+Output list of employees which salary is maximal for its department.
 #### Result:
 ```
-
++--------+-------------+--------+
+| dep_id | name        | salary |
++--------+-------------+--------+
+|      1 | John Smith  | 100000 |
+|      2 | Ann Johnson |  20000 |
+|      3 | Garry Poter | 100000 |
+|      3 | Bob Martin  | 100000 |
+|      4 | Sonya Monya |  10000 |
++--------+-------------+--------+
 ```
 
 ### Task#5:
-
+Output list of employees which doesn't have a chief that works in the 
+same department.
 #### Result:
 ```
-
++--------------+
+| name         |
++--------------+
+| Ann Johnson  |
+| Larry Oldson |
+| Sonya Monya  |
++--------------+
 ```
-
+>Tip: Use **JOIN** clause to make it easy.
