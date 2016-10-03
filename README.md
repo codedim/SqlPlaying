@@ -1,17 +1,17 @@
 SQL Quizzes
 ===========
 
-Thes repository consists of a few MySQL databases that you may use to 
+This repository consists of a few MySQL databases that you may use to 
 get some practice in Structured Query Language.
 
 Before you'll be able to start these tests, you must to have **MySQL 
 Server v.5.6** installed on your system. If you have not it yet, you can 
 use my [WAMP](https://github.com/codedim/WAMP) repo to get the server 
-quickly and start the SQL practice (for Windows platforms only).
+quickly and start the SQL practice with easy (for Windows platforms only).
 
 And the next step to begin, you must to replace your current MySQL 
-server data with data from this repo. To do that, stop your sql-server 
-firstly:
+server data with data from this repo. To do that, firstly stop your 
+sql-server:
 
 ```
 net stop MySQL
@@ -46,25 +46,25 @@ The every offered Quiz is contained in a separate Database. Those
 databases are named as **test1**, **test2** and so on.
 
 In every such database you can find a table named **answers**, that 
-consists possible answers (SQL queries) together with corresponding IDs. 
-If you wish to compare your answer with my one, just type:
+consists possible answers (SQL queries) together with its corresponding 
+IDs. If you wish to compare your answer with my one, just type:
 
 ```
 SELECT answer FROM answers WHERE id = <NumberOfQuestion>;
 ```
 
-Good Luck!
+**Good Luck!**
 
 
 Test#1. Making a database.
 --------------------------
 
-In this section we will create a database and a table. Fill in the 
-table with some information. And even transfer the table into a 
+In this section we will create a database and a table, fill in the 
+table with some information, and even transfer the table into a 
 different database.
 
 ### Task#1:
-If the database named TEST1 excists, delete it. Make the new TEST1 
+If the database named **TEST1** excists, delete it. Make the new **TEST1** 
 database.
 #### Resul:
 ```
@@ -72,9 +72,9 @@ Query OK, 1 row affected (0.00 sec)
 ```
 
 ### Task#2:
-Switch into the database and make the table named COMPUTERS which must 
-consist of three integer (numeric) columns: CPU, MEMORY, HDD. Then show 
-the new table in the TEST1 database.
+Switch into the database and make the table named **COMPUTERS** which must 
+consist of three integer (numeric) columns: **CPU**, **MEMORY**, **HDD**. 
+Then show the new table in the **TEST1** database.
 #### Resul:
 ```
 +-----------------+
@@ -85,7 +85,7 @@ the new table in the TEST1 database.
 ```
 
 ### Task#3:
-Show the COMPUTERS table column's domains (data types).
+Show the **COMPUTERS** table column's domains (data types).
 #### Resul:
 ```
 +--------+--------+------+-----+---------+-------+
@@ -98,7 +98,8 @@ Show the COMPUTERS table column's domains (data types).
 ```
 
 ### Task#4:
-Add four rows to the COMPUTERS table with the following information:
+Add four rows to the **COMPUTERS** table with the following 
+information:
 #### Resul:
 ```
 +------+--------+------+
@@ -112,7 +113,7 @@ Add four rows to the COMPUTERS table with the following information:
 ```
 
 ### Task#5:
-Change the HDD value of the last row to 500 (GB).
+Change the **HDD** value of the last row to 500 (GB).
 #### Resul:
 ```
 +------+--------+------+
@@ -126,12 +127,12 @@ Change the HDD value of the last row to 500 (GB).
 ```
 
 ### Task#6:
-Transfer the COMPUTERS table as PC table into the TEST2 databese.
+Transfer the **COMPUTERS** table as **PC** table into the **TEST2** databese.
 
->Tip: Use fully-specified table names in RENAME clouse. In such way you can 
-rename entire databases as well.
+>Tip: Use fully-specified table names in **RENAME** clouse. In the same way 
+you can rename entire databases as well.
 
-Demonstrate the TEST1 database is empty now.
+Demonstrate the **TEST1** database is empty now.
 #### Resul:
 ```
 Empty set (0.00 sec)
@@ -141,12 +142,13 @@ Empty set (0.00 sec)
 Test#2. Simple queries.
 -----------------------
 
-The most commonly used queries in SQL are SELECT queries. This type of 
+The most commonly used queries in SQL are **SELECT** queries. This type of 
 queries is used to retrieve varios information from databases. So, let's 
-make some simple SELECT queries from the PC table.
+make some simple **SELECT** queries from the **PC** table.
 
 ### Task#1:
-Output CPU and HDD values of PCs which memory value is equal to 3000 (MB).
+Output **CPU** and **HDD** values of **PC**s which memory value is equal to 
+3000 (MB).
 #### Resul:
 ```
 +------+------+
@@ -158,7 +160,7 @@ Output CPU and HDD values of PCs which memory value is equal to 3000 (MB).
 ```
 
 ### Task#2:
-Output minimal HDD value named as MIN_HDD.
+Output minimal **HDD** value named as **MIN_HDD**.
 #### Resul:
 ```
 +---------+
@@ -169,8 +171,8 @@ Output minimal HDD value named as MIN_HDD.
 ```
 
 ### Task#3:
-Output COUNT and HDD values where COUNT is amount of PCs which have the 
-minimal HDD value.
+Output **COUNT** and **HDD** values where **COUNT** is amount of **PC**s 
+which have the minimal **HDD** value.
 #### Resul:
 ```
 +-------+------+
@@ -185,10 +187,11 @@ Test#3. The special cases.
 --------------------------
 
 In this chapter we'll consider some special queries to a SQL DBMS. Before 
-you start the tasks below you should know about the special table named DUAL.
+you start the tasks below you should know about the special table named 
+**DUAL**.
 
 ### Task#1:
-Calculate the value of the following expression: ( 3 + 2 * 4 ).
+Calculate the value of the following expression: **3 + 2 * 4**.
 #### Resul:
 ```
 +-----------+
@@ -199,9 +202,9 @@ Calculate the value of the following expression: ( 3 + 2 * 4 ).
 ```
 
 ### Task#2:
-Make a new table LOGON by using SELECT query only. The table must consist 
-of two columns (USER and SYSDATE) and have only one row with current user 
-and date-time information.
+Make a new table **LOGON** by using **SELECT** query only. The table must 
+consist of two columns (**USER** and **SYSDATE**) and have only one row with 
+current user and date-time information.
 #### Resul:
 ```
 +----------------+---------------------+
@@ -212,8 +215,8 @@ and date-time information.
 ```
 
 ### Task#3:
-Add to the LOGON table a column named ID which must have not-null, 
-auto-incremented and primary-key values.
+Add to the **LOGON** table a column named **ID** to consist **not-null**, 
+**auto-incremented** and **primary-key** values.
 #### Resul:
 ```
 +----------------+---------------------+----+
@@ -224,7 +227,7 @@ auto-incremented and primary-key values.
 ```
 
 ### Task#4:
-Print the information about the table LOGON column data types.
+Print the information about the table **LOGON** column data types.
 #### Resul:
 ```
 +---------+-------------+------+-----+---------------------+----------------+
@@ -237,7 +240,8 @@ Print the information about the table LOGON column data types.
 ```
 
 ### Task#5:
-Add to the LOGON table a new row with the current user and date-time values.
+Add to the **LOGON** table a new row with the current user and date-time 
+values.
 #### Resul:
 ```
 +----------------+---------------------+----+
