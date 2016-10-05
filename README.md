@@ -5,38 +5,28 @@ This repository consists of a few MySQL databases that you may use to
 get some practice in Structured Query Language.
 
 Before you'll be able to start these tests, you must to have **MySQL 
-Server v.5.6** installed on your system. If you have not it yet, you can 
+Server** installed on your system. If you have not it yet, you can 
 use my [WAMP](https://github.com/codedim/WAMP) repo to get the server 
-quickly and start the SQL practice with easy (for Windows platforms only).
+quickly and start your SQL practice without any difficulties (for the 
+Windows platforms only).
 
-And the next step to begin, you must to replace your current MySQL 
-server data with data from this repo. To do that, firstly stop your 
-sql-server:
+>**Important note!**  If you have any important data, just in case, 
+make the backup of your actual MySQL databases before you continue.
 
-```
-net stop MySQL
-```
-
->**Important note!** Backup your actual Databases (the **mysql\data** 
-subdirectory) bofore you continue, if you have them.
-
-Clear your **mysql\data** directory and install this repo into it:
+And, as the next step to begin, you have to add several databases from 
+this repo to your existing MySQL data. To do that, install this repo 
+into the directory you wish and import the **all_tests.sql** file to 
+your MySQL DBMS:
 
 ```
 git install https://github.com/codedim/SqlPlaying.git
+mysql -u root -p  < all_tests.sql
 ```
 
-Well, you're almost ready now. Start your server back, login to it as 
-**root** user and go through the quizzes to have them completed:
+>Make sure you provide the correct path to the **all_tests.sql** file
 
-```
-net start MySQL
-mysql\bin\mysql -u root
-mysql>show databases;
-```
-
->P.S. Do not forget to return your actual Databases back when you'll 
-have finished the Quizzes.
+Well, you're almost ready now. Login to your MySQL server as **root** 
+and go through the quizzes to have them completed.
 
 
 -----------------------------
@@ -361,7 +351,7 @@ then three.
 |      4 |
 +--------+
 ```
->Tip: Use **HAVING** clause to make it easy.
+>Tip: Use **HAVING** clause to make it more easily.
 
 ### Task#5.3:
 Output list of employees, which salary is more then its chief earns.
@@ -403,5 +393,92 @@ same department.
 | Sonya Monya  |
 +--------------+
 ```
->Tip: Use **JOIN** clause to make it easy.
+>Tip: Use **JOIN** clause to make it more easily.
+
+
+
+-------------------------
+Test#6. Let's manage DBMS
+-------------------------
+
+In this chapter wi will do some common tasks of DBMS administrators.
+
+To effectively maintain data and perform user queries the MySQL server 
+uses a few additional databases. Those databases are intended to store 
+the DBMS metadata and named as follow:
+
+* infromation_schema
+* mysql
+* performance_schema
+
+The Information Schema consists of read-only Views, which purpose is 
+to provide information about the database system. The Performance 
+Schema provides a way to troubleshoot common performance issues. 
+And the MySQL Schema is exactly what that interests us at this point.
+
+### Task#6.1:
+Make a new local DBMS user named **TESTER** and provide him for all 
+privileges on all **TESTx** databases. Provide a single SQL query to 
+do that.
+
+Output **HOST** and **USER** values from the **MYSQL.USER** table.
+#### Result:
+```
++-----------+----------------+
+| host      | user           |
++-----------+----------------+
+| 127.0.0.1 | root           |
+| ::1       | root           |
+| localhost |                |
+| localhost | root           |
+| localhost | tester         |
++-----------+----------------+
+```
+
+### Task#6.2:
+Relogin as the **TESTER** user and make sure the all **TESTx** 
+databases are available for you.
+#### Result:
+```
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| test1              |
+| test2              |
+| test3              |
+| test4              |
+| test5              |
+| test6              |
++--------------------+
+```
+
+### Task#6.3:
+Make a **dump** of the **TEST6** database and save it in **test6.sql** 
+file. After that, remove the **TEMP** table from the **TEST6** database 
+and show all tables in it.
+#### Result:
+```
++-----------------+
+| Tables_in_test6 |
++-----------------+
+| answers         |
++-----------------+
+```
+
+### Task#6.4:
+Restore the **TEST6** database from backup. Output content of the 
+**TEMP** table.
+#### Result:
+```
++--------------------------------------------------+
+| temp                                             |
++--------------------------------------------------+
+| THIS IS A TEMPORARY TABLE FOR YOUR SQL PRACTICE. |
++--------------------------------------------------+
+```
+
+### Task#6.5:
+Finally, take away all privileges from **TESTER** and completely remove 
+this user.
 
