@@ -397,9 +397,9 @@ same department.
 
 
 
--------------------------
-Test#6. Let's manage DBMS
--------------------------
+--------------------------
+Test#6. Let's manage DBMS.
+--------------------------
 
 In this chapter wi will do some common tasks of DBMS administrators.
 
@@ -407,14 +407,14 @@ To effectively maintain data and perform user queries the MySQL server
 uses a few additional databases. Those databases are intended to store 
 the DBMS metadata and named as follow:
 
-* infromation_schema
-* mysql
-* performance_schema
+* **infromation_schema**
+* **mysql**
+* **performance_schema**
 
 The Information Schema consists of read-only Views, which purpose is 
 to provide information about the database system. The Performance 
 Schema provides a way to troubleshoot common performance issues. 
-And the MySQL Schema is exactly what that interests us at this point.
+And the MySQL Schema is exactly that we have a deal at this point.
 
 ### Task#6.1:
 Make a new local DBMS user named **TESTER** and provide him for all 
