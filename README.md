@@ -320,12 +320,12 @@ and the 'Emplowee' table as **EMP**. Note that the **EMP** table has
 to itself as well.
 
 To complete the Test you have to be familiar with **ORDER BY .. HAVING** 
-and **JOIN** clauses and be able to compose -- so to spaek -- 
-*cross-linking* **SELECT** queries.
+and **JOIN** clauses and be able to compose --so to spaek-- cross-linking 
+**SELECT** queries.
 
 ### Task#5.1:
 Output list of departments with total salaries of all its employees sorted 
-by total salaris.
+by total salary.
 #### Result:
 ```
 +-------------+-------------+
@@ -401,7 +401,8 @@ same department.
 Test#6. Let's manage DBMS.
 --------------------------
 
-In this chapter wi will do some common tasks of DBMS administrators.
+In this chapter we will do some common tasks for database managment 
+system (DBMS) administrators.
 
 To effectively maintain data and perform user queries the MySQL server 
 uses a few additional databases. Those databases are intended to store 
